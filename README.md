@@ -1,6 +1,6 @@
 ## 🏥 Clínica Vida+
 
-Este projeto e contruido para gerenciar pacientes e consultas médicas de uma clínica de saúde que  sofre com a grande demanda de serviços médicos e procura por uma solução digital capaz de otimizar o tendimento e a experinecia dos pacientes.
+Este projeto e contruido para gerenciar pacientes e consultas médicas de uma clínica de saúde que  sofre com a grande demanda de serviços médicos e procura por uma solução digital capaz de otimizar o atendimento e a experinecia dos pacientes.
 
 ## Visão Geral do Projeto
 

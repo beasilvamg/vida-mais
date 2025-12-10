@@ -1,3 +1,4 @@
+#Armazenamento dos dados dos pacientes
 class PacienteRepository:
     def __init__(self):
         self.dados_pacientes = []
