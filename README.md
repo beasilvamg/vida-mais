@@ -15,15 +15,16 @@ Atualmente, o foco do projeto está na **organização e refatoração do backen
 
 ### ✅ O que já foi feito
 
-- Definição da **estrutura modular** do backend
-- Criação dos primeiros módulos:
-- A classe **Paciente** foi criada e isolada em `backend/models/paciente.py`.
+- Definição e criação da **estrutura modular** completa do backend (models/, controllers/, services/, etc.).
+- Criação dos **Modelos (Dados):** A classe **Paciente** foi isolada corretamente em backend/models/paciente.py.
+- Criação dos **Utilitários (Ferramentas):** As funções de *validação de *input* (checagem de nome, idade e telefone) foram isoladas no módulo backend/utils/validacoes.py.
 
 ### ⏳ Em andamento
 
-- Refatoração do código original para a nova estrutura modular
-- As funções de validação (nome, idade, telefone) precisam ser isoladas no módulo `utils/validacoes.py`.
-- O código de cadastro, lista e busca será movido para a pasta `controllers/`.
+
+- Implementar o Controlador: Mover o código de gerenciamento de dados (cadastro, lista e busca) para a pasta `controllers/`. Este é o próximo passo a ser concluído.
+- Implementar o Serviço: Isolar a lógica de cálculos e relatórios de estatísticas no módulo services/estatisticas.py.
+-Finalizar o Menu: Ajustar o arquivo app.py para chamar os novos módulos.
 
 ### ❌ Ainda não iniciado
 
