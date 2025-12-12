@@ -1,97 +1,9 @@
 # Importação das bibliotecas
-import re
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
-# Definindo classe pai
-class Paciente:
-    def __init__(self, nome, idade, telefone):
-        self.nome = nome
-        self.idade = idade
-        self.telefone = telefone
-
-    def __str__(self):
-        return f' Nome: {self.nome} | Idade: {self.idade} | Telefone: {self.telefone}\n'
-
-
 # Classe que herda os dados da classe paciente
 class Clinica():
-    def __init__(self):
-        # lista para armazenar os dados dos pacientes
-        self.dados_pacientes = []
-
-    # Gerenciar os dados dos pacientes
-    # Função para cadatrar paciente
-    def cadastrar_paciente(self):
-        print("\n" + "="*45)
-        print("🩺 CADASTRO DE PACIENTE")
-        print("="*45)
-        print("Preencha os campos abaixo: \n")
-
-        try:
-            nome = input("Nome do Paciente: ").strip()
-            if not re.match(r"^[A-Za-zÀ-ÿ\s]+$", nome):
-                raise ValueError("O nome deve conter apenas letras e espaços.")
-            
-
-            idade_str = input("Idade: ").strip()
-            if not idade_str.isdigit():
-                raise ValueError("A idade deve conter apenas números.")
-            idade = int(idade_str)
-            if idade <= 0 or idade > 120:
-                raise ValueError("A idade deve estar entre 1 e 120.") 
-
-
-            telefone = input("Telefone (formato (99) 98765-4321): ").strip()
-            if not re.match(r"^\(\d{2}\)\s9\d{4}-\d{4}$", telefone):
-                raise ValueError("Telefone inválido! Use o formato (99) 98765-4321.")  
-             
-
-            #Adiciona paciente na lista
-            novo_paciente = Paciente(nome, idade, telefone)
-            self.dados_pacientes.append(novo_paciente)
-            print('\n✅ Paciente cadastrado com sucesso!\n')
-
-        except ValueError as erro:
-            print(f"\n Erro: {erro}\nTente novamente.\n")
-            # Chama novamente a função para o usuário tentar de novo
-            self.cadastrar_paciente()
-
-
-    # Lista em ordem de todos os pacientes cadastrados
-    def lista_paciente(self):
-        print("\n" + "="*45)
-        print("📋 LISTA DE PACIENTES")
-        print("="*45)
-
-        if not self.dados_pacientes:
-            print('Nemhum paciente cadastrado ainda.\n')
-            print()
-            return
-        else:
-            for i, paciente in enumerate(self.dados_pacientes, start=1):
-                print(f'{i}.{paciente}')
-
-
-    # Buscar paciente pelo nome
-    def buscar_paciente(self):
-        print("\n" + "="*45)
-        print("🔎 BUSCAR PACIENTE")
-        print("="*45)
-
-        nome = input('Digite o nome do paciente: ').strip()
-        print()
-
-        resultado = list(filter(lambda paciente: nome.lower() in paciente.nome.lower(), self.dados_pacientes))
-        # Condição caso o nome do paciente não seja encontrado
-        if resultado:
-            print(f'\nForam encontrados {len(resultado)} paciente(s) com esse nome: \n')
-            for paciente_encontrado in resultado:
-                print(f'Nome: {paciente_encontrado.nome}, Idade: {paciente_encontrado.idade}, Telefone: {paciente_encontrado.telefone}')
-        else:
-            print(f'Nenhum paciente encontrado. Você pode cadastrá-lo no sistema.\n')
-
 
     # Mostrar as estatísticas da clínica
     def estatistica_clinica(self):
